@@ -1,0 +1,32 @@
+{
+  "name": "ts-pkg-template",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": "dist/index.js",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "node build/.core/build.js -b -n",
+    "format": "prettier --write '**/*.{js,ts,jsx,tsx,json,yml,yaml,md,html}' --ignore-path .gitignore",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "eslint ."
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vercel/ncc": "^0.38.3",
+    "pkg": "^5.8.1",
+    "resedit": "1.7.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+  }
+}
